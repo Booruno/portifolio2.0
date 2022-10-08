@@ -2,12 +2,14 @@
 
 :root {
   --body-color: #0e1228;
-  --indigo: #6610f2;
+  --indigo: #6710f2;
+  --card-transparency: #0e1228db;
+  --white: #fff;
 }
 
 body {
   background-color: var(--body-color) !important;
-  color: #fff !important;
+  color: var(--white) !important;
   font-family: "Source Code Pro", monospace !important;
   width: 100%;
   height: 100vh;
@@ -23,13 +25,17 @@ section {
 .navbar {
   background: linear-gradient(
       to bottom,
-      rgb(0 0 0) 0%,
+      var(--indigo),
       rgb(255 255 255 / 0%) 100%
     ),
-    #000000d6;
+    #ffffff00;
 }
 .nav-logo {
   max-width: 150px;
+}
+
+a.nav-link {
+  color: var(--white);
 }
 
 /* Header */
@@ -51,5 +57,29 @@ header {
 
 /* Sobre */
 .sobre {
-  background: #0e1228;
+  background: var(--body-color);
+}
+.sobre-container {
+  overflow: hidden;
+}
+
+a.btn-leia {
+  color: var(--white);
+  font-weight: 900;
+  transition: 100ms;
+  text-decoration: none;
+}
+
+a.btn-leia:hover {
+  color: var(--indigo);
+}
+
+/* Medias */
+@media (max-width: 768px) {
+  ul.navbar-nav {
+    background: var(--card-transparency);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+  }
 }
