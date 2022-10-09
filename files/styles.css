@@ -8,17 +8,22 @@
 }
 
 body {
-  background-color: var(--body-color) !important;
-  color: var(--white) !important;
-  font-family: "Source Code Pro", monospace !important;
-  width: 100%;
-  height: 100vh;
   background: url(/imgs/home-background.png.jpg) center;
   background-size: cover;
+  background-attachment: fixed;
+  color: var(--white) !important;
+  font-family: "Source Code Pro", monospace !important;
+  height: 100vh;
+  padding-top: 25vh;
+  width: 100%;
 }
 
 section {
   padding: 100px 1rem;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /* Nav */
@@ -40,7 +45,6 @@ a.nav-link {
 
 /* Header */
 header {
-  padding-top: 5rem;
   text-shadow: 3px 1px 1px var(--indigo);
 }
 .home-background {
@@ -57,7 +61,15 @@ header {
 
 /* Sobre */
 .sobre {
-  background: var(--body-color);
+  background: linear-gradient(
+      180deg,
+      var(--card-transparency),
+      var(--body-color),
+      var(--card-transparency)
+    ),
+    #ffffff00;
+
+  text-shadow: 3px 1px 1px var(--indigo);
 }
 .sobre-container {
   overflow: hidden;
@@ -65,17 +77,49 @@ header {
 
 a.btn-leia {
   color: var(--white);
+  cursor: pointer;
   font-weight: 900;
   transition: 100ms;
   text-decoration: none;
 }
 
 a.btn-leia:hover {
-  color: var(--indigo);
+  color: white;
+  font-size: calc(105%);
+}
+
+/* Habilidades */
+.skills {
+  text-shadow: 3px 1px 1px var(--indigo);
+}
+
+#skills .fa-brands {
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: 100ms;
+}
+#skills .fa-brands p {
+  font-size: 0.45rem;
+}
+#skills .fa-brands:hover {
+  text-shadow: 10px 5px 5px var(--indigo);
+}
+
+/* Projetos */
+.projetos {
+  background: linear-gradient(
+      180deg,
+      var(--card-transparency),
+      var(--body-color),
+      var(--card-transparency)
+    ),
+    #ffffff00;
+
+  text-shadow: 3px 1px 1px var(--indigo);
 }
 
 /* Medias */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   ul.navbar-nav {
     background: var(--card-transparency);
     padding: 1rem;
